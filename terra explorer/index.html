@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TERRA — Interactive Globe</title>
+
+  <!-- Fichiers CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Librairies nécessaires -->
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/globe.gl@2.24.6/dist/globe.gl.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Fond spatial -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Globe 3D -->
+    <div id="globeViz"></div>
+
+    <!-- En-tête -->
+    <header class="site-title" aria-hidden="true">
+      <div class="logo">TERRA</div>
+      <div class="subtitle">Explore our planet</div>
+    </header>
+
+    <!-- Texte au centre -->
+    <div class="center-cta" aria-hidden="true">
+      <h1>Explore Interactive Globe</h1>
+      <p>Click any country to open details</p>
+    </div>
+
+    <!-- Panneau d’informations -->
+    <aside id="infoPanel" class="info-panel hidden" role="region" aria-live="polite">
+      <button class="close-btn" id="closeInfo" title="Fermer">×</button>
+      <h2 id="infoTitle">Sélectionnez un pays</h2>
+
+      <div class="info-row"><div class="info-key">Capitale</div><div id="infoCapital">—</div></div>
+      <div class="info-row"><div class="info-key">Heure locale</div><div id="infoTime">—</div></div>
+      <div class="info-row"><div class="info-key">Météo</div><div id="infoWeather">—</div></div>
+      <div class="info-row"><div class="info-key">Code</div><div id="infoCode">—</div></div>
+      <div style="margin-top:10px; font-size:12px; color:#7ea1b6;">Données météo/heure : intégration API possible (ex : OpenWeather, WorldTimeAPI).</div>
+    </aside>
+  </div>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
